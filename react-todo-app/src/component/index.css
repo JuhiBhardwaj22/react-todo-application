@@ -1,0 +1,25 @@
+.todo_app{
+display: flex;
+text-align: center;
+justify-content: center;
+}
+.add-button{
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.add_list{
+    margin-left: 380px;
+    margin-top: 20px;
+    border: 3px solid gray;
+    width: 30%;
+    height: 300px;
+}
+
+.icon{
+    float: right;
+    margin-left: 100px;
+    margin-top: -7px;
+}
+.css-1fuz9qr-MuiPaper-root-MuiAlert-root{
+    width: 300px !important;
+}
