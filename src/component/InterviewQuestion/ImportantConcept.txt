@@ -1,0 +1,31 @@
+
+
+In React, when you pass a click event handler to a component, you can use 
+either `handleClick()` or `handleClick` as the callback function. 
+
+The difference between the two is that `handleClick()` is a function call, 
+meaning that the function will be executed immediately, 
+
+while `handleClick` is a reference to the function itself, meaning that 
+it will be passed as a callback and executed when the event is triggered.
+
+For example, if you use `handleClick()` as the event handler:
+
+```
+<button onClick={handleClick()}>Click me</button>
+```
+
+The function `handleClick` will be executed immediately when the button is rendered, 
+not when it is clicked. This is likely not what you want.
+
+On the other hand, if you use `handleClick` as the event handler:
+
+```
+<button onClick={handleClick}>Click me</button>
+```
+
+The `handleClick` function will be passed as a callback to the `onClick` event and will only be executed when the button is clicked.
+
+So in summary, if you want to pass a function as a callback to an event handler in React,
+ use the function reference (without parentheses)
+  instead of calling the function (with parentheses).
