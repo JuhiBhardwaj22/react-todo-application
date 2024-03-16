@@ -5,6 +5,7 @@ const TodoExample = () => {
   const [todo, setTodoList] = useState([]);
   const [isUpdate, setIsUpdate] = useState(false);
   const [updateIndex, setUpdateIndex] = useState(null);
+
   const handleTodo = () => {
     if (isUpdate) {
       //update value
@@ -20,6 +21,23 @@ const TodoExample = () => {
       setTodoList((prev) => [...prev, text]);
       setText("");
     }
+  };
+  const handleInput = (e) => {
+    setText(e.target.value);
+  };
+
+  const handleSearch = () => {
+    // const searchText = text;
+    // const todoList = [...todo];
+    // if (searchText) {
+    //   const newFilterTodos = todoList.filter((item, index) => {
+    //     return item.toLowerCase().includes(searchText.toLowerCase());
+    //   });
+    //   setTodoList(newFilterTodos);
+    // } else {
+    //   console.log("todoList", todoList);
+    //   setTodoList(todoList);
+    // }
   };
   const handleUpdate = (item, index) => {
     setIsUpdate(true);
@@ -39,9 +57,10 @@ const TodoExample = () => {
       <input
         placeholder="enter text Here"
         value={text}
-        onChange={(e) => setText(e.target.value)}
+        onChange={(e) => handleInput(e)}
       />
       <button onClick={handleTodo}>Click Here</button>
+      <button onClick={handleSearch}>Search Todo </button>
       {todo.map((item, index) => {
         return (
           <ul>
